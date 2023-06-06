@@ -182,7 +182,7 @@ function drawLineChart(incomeData, expenseData) {
       datasets: [
         {
         label: '收入',
-        data: sortedData.map(({ expense }) => expense || 0),
+        data: sortedData.map(({ income }) => income || 0),
         type: 'line',
 
          // Line
@@ -196,7 +196,7 @@ function drawLineChart(incomeData, expenseData) {
       },
       {
         label: '支出',
-        data: sortedData.map(({ income }) => income || 0),
+        data:  sortedData.map(({ expense }) => expense || 0),
         type: 'line',
          // Line
         lineTension: 0,

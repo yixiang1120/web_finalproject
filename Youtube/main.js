@@ -2,6 +2,17 @@ const logoutButton = document.getElementById("logout");
 const loginButton = document.getElementById("login");
 let player;
 let currentPlay = 0;
+
+
+logoutButton.addEventListener("click", function() {
+    // 清除使用者資訊
+    localStorage.removeItem("currentUser");
+    email = "";
+    console.log("清除使用者資訊");
+    console.log(localStorage.getItem("currentUser"));
+    window.location.href = "login.html";
+  });
+
 //YouTube API Ready
 function getTransactions() {
     const currentUser = localStorage.getItem("currentUser");

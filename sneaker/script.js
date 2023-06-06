@@ -14,6 +14,16 @@ var prizes = [
 const logoutButton = document.getElementById("logout");
 const loginButton = document.getElementById("login");
 
+
+logoutButton.addEventListener("click", function() {
+  // 清除使用者資訊
+  localStorage.removeItem("currentUser");
+  email = "";
+  console.log("清除使用者資訊");
+  console.log(localStorage.getItem("currentUser"));
+  window.location.href = "login.html";
+});
+
 function getTransactions() {
   const currentUser = localStorage.getItem("currentUser");
   const user = JSON.parse(currentUser);

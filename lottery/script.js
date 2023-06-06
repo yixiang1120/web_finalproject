@@ -28,6 +28,15 @@ var prizes = [
   {id: 17, image: "images/coin.png", text: "Ｘ200", name: "Coin X 200枚", dollar: 200}
 ];
 
+logoutButton.addEventListener("click", function() {
+  // 清除使用者資訊
+  localStorage.removeItem("currentUser");
+  email = "";
+  console.log("清除使用者資訊");
+  console.log(localStorage.getItem("currentUser"));
+  init();
+  window.location.href = "login.html";
+});
 
 $(function() {
     getTransactions();

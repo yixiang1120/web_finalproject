@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Shoes Funds 記帳</title>
+  </head>
+  
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <img src="images/shoesfund.png" >
+          <li><a href="index.html">主頁</a></li>
+          <li><a href="sneaker.html">展示櫃</a></li>
+          <li><a href="lottery.html">抽獎</a></li>
+          <li><a href="video.html">理財小知識</a></li>
+          <li><a href="login.html" id="login">登入/註冊</a></li>
+          <li><a href="#" id="logout">登出</a></li>
+          <li id="user-name"></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>記帳</h1>
+
+    <div class="container">
+      <div class="header">
+        <img src="images/pig.png" alt="Expense Tracker" />
+        <div class="balance-container">
+          <h2>餘額</h2>
+          <h2 id="balance" class="balance">$0.00</h2>
+        </div>
+        <img src="images/coin.png" alt="Expense Tracker" />
+        <div class="balance-container">
+          <h2>金幣</h2>
+          <h2 id="coin" class="balance">0</h2>
+        </div>
+      </div>
+      <div class="inc-exp-container">
+        <div>
+          <h4>收入</h4>
+          <p id="money-plus" class="money plus">+$0.00</p>
+        </div>
+        <div>
+          <h4>支出</h4>
+          <p id="money-minus" class="money minus">-$0.00</p>
+        </div>
+      </div>
+      <h3>歷史紀錄</h3>
+      <div class = "chart">
+        <canvas id="myChart" width="450" height="300"></canvas>
+      </div>
+      <ul id="list" class="list"></ul>
+      <h3>新增記帳說明</h3>
+      <form id="form">
+        <div class="form-control">
+          <label for="date">日期</label>
+          <input type="date" id="date" />
+        </div>
+
+        <div class="form-control">
+          <label for="location">位置</label>
+          <div id="map"></div>
+          <button id="find-location">定位</button>
+          <select id="location-select" >
+            <option disabled selected>請選擇地點</option>
+            <option value="home">家</option>
+            <option value="company">公司</option>
+            <option value="school">學校</option>
+          </select>
+        </div>
+        <div class="form-control">
+          <label for="text">收支描述</label>
+          <input type="text" id="text" placeholder="請輸入您收支的項目..." />
+        </div>
+        <div class="form-control">
+          <label for="amount">金額 <br />
+            <small>(-100 = 支出, 100 = 收入)</small>
+          </label>
+          <input type="number" id="amount" placeholder="請輸入金額..." />
+        </div>
+        <button class="btn">確認</button>
+      </form>
+    </div>
+    <!-- Notification -->
+    <div class="notification-container" id="notification">
+      <p>請填寫正確內容</p>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal">
+        <h2>恭喜您！</h2>
+        <img src="images/coin.png" alt="Expense Tracker" />
+        <h3>獲得10枚Coin幣</h3>
+        <button class="btn" id="close-button">關閉</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgn1sI9a_H5hBaLyBfkRbs9TFs9TXWlbk&libraries=places&callback=initMap"
+      async defer
+    ></script>
+  </body>
+</html>

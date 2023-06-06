@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+  --main-color: #a394b9;
+  --secondary-color: #393a57;
+  --ternary-color: #486ba6;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --background-color: #e4e7f8;
+  --background-secondary-color: #fff;
+  --border-color: #80717f;
+  --border-secondary-color: #bcc0cb;
+  --plus-color: #63c78c;
+  --minus-color: #f87e70;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header img {
+  width: 4.5rem;
+  width: 4.5rem;
+  opacity: 0.5;
+}
+
+.balance-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 30px auto;
+  width: 700px;
+}
+
+h1 {
+  font-size: rem;
+}
+
+h2 {
+  font-size: 1.17rem;
+}
+
+.balance {
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 2rem;
+}
+
+h3 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h2,
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  background-color: var(--background-secondary-color);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid var(--border-secondary-color);
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: var(--plus-color);
+}
+
+.money.minus {
+  color: var(--minus-color);
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--main-color);
+  box-shadow: var(--box-shadow);
+  color: var(--background-secondary-color);
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: var(--background-secondary-color);
+  box-shadow: var(--box-shadow);
+  color: var(--ternary-color);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+
+  padding: 10px;
+  margin: 10px 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.list li.plus {
+  border-left: 5px solid var(--plus-color);
+}
+
+.list li.minus {
+  border-left: 5px solid var(--minus-color);
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: var(--minus-color);
+  color: var(--background-secondary-color);
+  box-shadow: var(--box-shadow);
+  border: 0;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 10px;
+  margin: 10px 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -73%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li span {
+  flex: 1;
+  text-align: center;
+}
+
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.notification-container {
+  background-color: var(--minus-color);
+  color: var(--background-secondary-color);
+  border-radius: 5px 5px 0 0;
+  padding: 15px 20px;
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.notification-container.show {
+  opacity: 1;
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#find-location {
+  background-color: var(--main-color);
+  color: var(--background-secondary-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+#location-select {
+  appearance: none;
+  background-color: var(--background-secondary-color);
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 5px;
+  color: var(--secondary-color);
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+
+}
+
+#location-select option {
+  padding: 10px;
+}
+
+#location-select option:selected {
+  background-color: var(--main-color);
+  color: var(--background-secondary-color);
+}
+
+.form-control input[type="date"] {
+  appearance: none;
+  background-color: var(--background-secondary-color);
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 5px;
+  color: var(--secondary-color);
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control input[type="date"]::-webkit-calendar-picker-indicator {
+  color: var(--ternary-color);
+  font-size: 16px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+
+
+header {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #b9adca;
+  padding: 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 10px;
+  font-size: 20px;
+
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+
+}
+
+.nav-links li a:hover {
+  background-color: #8a799d;
+  color: #fff;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-top: 0;
+}
+
+.modal button {
+  margin-top: 10px;
+}
+
+#myChart{
+  margin: auto;
+  margin-top: 50px;
+  display: block;
+}

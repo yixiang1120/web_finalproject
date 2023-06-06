@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lottery/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+    <title>Shoes Funds 抽獎</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <img src="images/shoesfund.png" >
+          <li><a href="index.html">主頁</a></li>
+          <li><a href="sneaker.html">展示櫃</a></li>
+          <li><a href="lottery.html">抽獎</a></li>
+          <li><a href="video.html">理財小知識</a></li>
+          <li><a href="login.html" id="login">登入/註冊</a></li>
+          <li><a href="#" id="logout">登出</a></li>
+          <li id="user-name"></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="header">
+        <h1>~~ 抽獎 Time ~~</h1>
+        <img src="images/coin.png" alt="Expense Tracker" />
+      <div class="balance-container">
+        <h2>金幣</h2>
+        <h2 id="coin" class="balance">0</h2>
+      </div>
+    </div>
+    <div class="container p-5">
+      <div class="row row-cols-3 ">
+      <div class="col p-3">
+        <div id="item1" class="box p-3 h-100">          
+        </div>
+      </div>
+      <div class="col p-3">
+        <div id="item2" class="box p-3 h-100">
+        </div>
+      </div>
+      <div class="col p-3">
+        <div id="item3" class="box p-3 h-100">
+        </div>
+      </div>
+    
+      <div class="col p-3">
+        <div id="item0" class="box p-3 h-100">
+        </div>
+      </div>
+
+      <div class="col p-3">
+        <div class="p-3 h-100">
+          <input type="button" id="btnstart" value="抽獎" class="w-100 h-100"></div></div>
+          
+      <div class="col p-3">
+        <div id="item4" class="box p-3 h-100">
+        </div>
+      </div>
+    
+      <div class="col p-3">
+        <div id="item7" class="box p-3 h-100">
+        </div>
+      </div>
+      <div class="col p-3">
+        <div id="item6" class="box p-3 h-100">
+        </div>
+      </div>
+      <div class="col p-3">
+        <div id="item5" class="box p-3 h-100">
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">恭喜獲得</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="lottery/script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" ></script>
+  </body>
+</html>
